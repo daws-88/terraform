@@ -17,3 +17,4 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+# here we tell to git ignore  these files mentioned above
