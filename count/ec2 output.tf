@@ -1,3 +1,3 @@
-# output "instance_ip" {
-#   value = aws_instance.terraform
+# output "intance_ip" {
+#     value = aws_instance.terraform
 # }
