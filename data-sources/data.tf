@@ -22,11 +22,11 @@ output "ami_id" {
     value = data.aws_ami.joindevops.id
 }
 
-data "aws_instance" "dev" {
+data "aws_instance" "mysql" {
     instance_id = "i-034ecfd57ae617817"
 } 
 
 output "aws_instance" {
-   value = data.aws_instance.dev.launch_time
+   value = data.aws_instance.mysql.launch_time
 }
-     
+    
