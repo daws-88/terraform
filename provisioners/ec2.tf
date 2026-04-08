@@ -19,7 +19,7 @@ resource "aws_instance" "terraform" {
     type = "ssh"
     user = "ec2-user"
     password = "DevOps321"
-    host = self.public_ip
+    host = self.public_ip # within same block otherwise aws_instance.terraform.public_ip
     }
   
   provisioner "remote-exec" {
