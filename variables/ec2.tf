@@ -25,4 +25,3 @@ resource "aws_security_group" "allow-1" {
     cidr_blocks = var.cidir
   }
 }
-
