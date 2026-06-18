@@ -1,6 +1,7 @@
 #!/bin/bash
 
 ## clone dockerfile repo
+cd /home/ec2-user
 git clone https://github.com/daws-88/dockerfiles.git
 
 ## increase disk volume
