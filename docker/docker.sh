@@ -1,8 +1,8 @@
 #!/bin/bash
-
 ## clone dockerfile repo
 cd /home/ec2-user
 git clone https://github.com/daws-88/dockerfiles.git
+chown -R ec2-user:ec2-user dockerfiles
 
 ## increase disk volume
 growpart /dev/nvme0n1 4
