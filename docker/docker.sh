@@ -19,3 +19,4 @@ systemctl daemon-reload
 sudo systemctl enable --now docker
 sleep 10
 systemctl start docker
+usermod -aG docker ec2-user
