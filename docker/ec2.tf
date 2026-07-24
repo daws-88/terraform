@@ -8,7 +8,7 @@ resource "aws_instance" "terraform" {
   }
   user_data = file("docker.sh")
   tags = {
-    Name = "docker"
+    Name = "Workstation"
     terraform = "true"
   }
 }
