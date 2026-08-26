@@ -1,5 +1,4 @@
-resource "aws_instance" "terraform" {
-  count = 2
+resource "aws_instance" "jenkins-agent" {
   ami = "ami-0220d79f3f480ecf5"
   instance_type = "t3.small"
   vpc_security_group_ids = [aws_security_group.allow-1.id]
@@ -9,7 +8,7 @@ resource "aws_instance" "terraform" {
   }
   user_data = file("jenkins.sh")
   tags = {
-    Name = var.instances[count.index]
+    Name = "jenkins-agent"
     terraform = "true"
   }
 }
@@ -33,4 +32,13 @@ resource "aws_security_group" "allow-1" {
     protocol = "-1" # from all protocols
     cidr_blocks = ["0.0.0.0/0"]
   }
+}
+
+resource "aws_route53_record" "jenkins-agent" {
+  zone_id = var.zone_id
+  name    = "jenkins-agent.${var.domain_name}"
+  type    = "A"
+  ttl     = 2
+  records = [aws_instance.jenkins-agent.private_ip]
+  allow_overwrite = true
 }

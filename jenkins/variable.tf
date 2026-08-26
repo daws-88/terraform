@@ -1,3 +1,7 @@
-variable "instances" {
-    default = [ "jenkins", "AGENT-1" ]
+variable "zone_id" {
+    default = "Z04408301YE1UN4Q5BR1X" 
+}
+
+variable "domain_name" {
+    default = "daws88s.fun"
 }
