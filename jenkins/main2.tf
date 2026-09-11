@@ -6,10 +6,10 @@ resource "aws_instance" "jenkins-agent" {
     volume_type = "gp3"
     volume_size = 80
   }
-  user_data = file("jenkins.sh")
+  user_data = file("jenkins-agent.sh")
   tags = {
     Name = "jenkins-agent"
-    terraform = "true"
+    Jenkins = "true"
   }
 }
 
@@ -38,7 +38,7 @@ resource "aws_route53_record" "jenkins-agent" {
   zone_id = var.zone_id
   name    = "jenkins-agent.${var.domain_name}"
   type    = "A"
-  ttl     = 2
+  ttl     = 1
   records = [aws_instance.jenkins-agent.private_ip]
   allow_overwrite = true
 }

@@ -20,3 +20,4 @@ dnf makecache
 dnf install jenkins -y
 systemctl daemon-reload
 systemctl start jenkins
+systemctl start jenkins

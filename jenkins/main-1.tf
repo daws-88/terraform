@@ -9,7 +9,7 @@ resource "aws_instance" "jenkins" {
   user_data = file("jenkins.sh")
   tags = {
     Name = "jenkins"
-    terraform = "true"
+    Jenkins = "true"
   }
 }
 
@@ -17,7 +17,7 @@ resource "aws_route53_record" "jenkins" {
   zone_id = var.zone_id
   name    = "jenkins.${var.domain_name}"
   type    = "A"
-  ttl     = 2
+  ttl     = 1
   records = [aws_instance.jenkins.public_ip]
   allow_overwrite = true
 }

@@ -10,3 +10,5 @@ lvextend -l +100%FREE /dev/mapper/RootVG-homeVol
 xfs_growfs /
 xfs_growfs /var
 xfs_growfs /home
+
+dnf install fontconfig java-21-openjdk -y
