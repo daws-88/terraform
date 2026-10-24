@@ -1,7 +1,10 @@
 variable "zone_id" {
-    default = "Z04408301YE1UN4Q5BR1X" 
+    default = "Z07504603U1ZX1F5BKSLL" 
 }
 
 variable "domain_name" {
     default = "daws88s.fun"
 }
+ variable "sonar" {
+   default = false
+ }
