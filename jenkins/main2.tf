@@ -1,5 +1,5 @@
 resource "aws_instance" "jenkins-agent" {
-  ami = "ami-0055977a6e828a4f4"
+  ami = "ami-0220d79f3f480ecf5"
   instance_type = "t3.small"
   vpc_security_group_ids = [aws_security_group.allow-1.id]
   root_block_device {
