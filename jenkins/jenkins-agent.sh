@@ -22,6 +22,13 @@ sleep 10
 systemctl start docker
 usermod -aG docker ec2-user
 
+### install terraform
+
+dnf install -y dnf-plugins-core
+dnf config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
+dnf install terraform -y
+
+
 ## install nodejs
 dnf module disable nodejs -y
 dnf module enable nodejs:20 -y
