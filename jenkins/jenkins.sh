@@ -10,7 +10,8 @@ xfs_growfs /var
 xfs_growfs /home
 
 ## install java
-dnf install fontconfig java-21-openjdk -y
+dnf install fontconfig java-latest-openjdk -y
+# dnf install fontconfig java-21-openjdk -y
 rm -f /etc/yum.repos.d/jenkins.repo
 curl -fsSL -o /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/rpm-stable/jenkins.repo
 rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2026.key

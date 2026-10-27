@@ -11,7 +11,8 @@ xfs_growfs /
 xfs_growfs /var
 xfs_growfs /home
 
-dnf install fontconfig java-21-openjdk -y
+# dnf install fontconfig java-21-openjdk -y
+dnf install fontconfig java-latest-openjdk -y
 ## install docker
 dnf -y install dnf-plugins-core
 dnf config-manager --add-repo https://download.docker.com/linux/rhel/docker-ce.repo
