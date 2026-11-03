@@ -44,6 +44,11 @@ tar -xzf eksctl_$PLATFORM.tar.gz -C /tmp && rm eksctl_$PLATFORM.tar.gz
 install -m 0755 /tmp/eksctl /usr/local/bin && rm /tmp/eksctl
 
 
+# helm
+dnf install -y dnf-plugins-core
+curl -fsSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+dnf install helm
+
 ## install nodejs
 dnf module disable nodejs -y
 dnf module enable nodejs:20 -y
