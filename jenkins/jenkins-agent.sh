@@ -12,6 +12,7 @@ xfs_growfs /var
 xfs_growfs /home
 
 dnf install fontconfig java-21-openjdk -y
+
 ## install docker
 dnf -y install dnf-plugins-core
 dnf config-manager --add-repo https://download.docker.com/linux/rhel/docker-ce.repo
@@ -22,8 +23,12 @@ sleep 10
 systemctl start docker
 usermod -aG docker ec2-user
 
-### install terraform
+# Trivy
+curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sudo sh -s -- -b /usr/local/bin v0.68.2
+# Maven
+dnf install maven -y
 
+### install terraform
 dnf install -y dnf-plugins-core
 dnf config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
 dnf install terraform -y
@@ -45,9 +50,10 @@ install -m 0755 /tmp/eksctl /usr/local/bin && rm /tmp/eksctl
 
 
 # helm
-dnf install -y dnf-plugins-core
 curl -fsSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 dnf install helm
+
+
 
 ## install nodejs
 dnf module disable nodejs -y
