@@ -43,3 +43,8 @@ install -m 0755 /tmp/eksctl /usr/local/bin && rm /tmp/eksctl
 curl -LO https://github.com/ahmetb/kubectx/releases/latest/download/kubens
 chmod +x kubens
 mv kubens /usr/local/bin/
+
+## install k9s
+curl -sS https://webinstall.dev/k9s | bash
+
+

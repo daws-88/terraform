@@ -6,23 +6,23 @@ terraform {
     }
   }
   backend "s3" {
-    bucket         = "remote-state-88"
-    key            = "multi-account"
+    bucket       = "remote-state-88"
+    key          = "multi-account"
     use_lockfile = true
-    encrypt = true
-    region         = "us-east-1"
+    encrypt      = true
+    region       = "us-east-1"
   }
 }
 
 provider "aws" {
-  region = "us-east-1"
-  alias = "dev"
+  region  = "us-east-1"
+  alias   = "dev"
   profile = "dev"
 }
 
 provider "aws" {
-  region = "us-east-1"
-  alias = "prod"
+  region  = "us-east-1"
+  alias   = "prod"
   profile = "prod"
 }
 

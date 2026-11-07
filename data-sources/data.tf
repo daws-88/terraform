@@ -23,7 +23,7 @@ output "ami_id" {
 }
 
 data "aws_instance" "mysql" {
-    instance_id = "i-034ecfd57ae617817"
+    instance_id = "i-0355f99cd46d41298"
 } 
 
 output "aws_instance" {

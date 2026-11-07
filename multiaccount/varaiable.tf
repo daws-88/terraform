@@ -1,9 +1,9 @@
 variable "dev" {
-  type = string
+  type    = string
   default = "43976228791"
 }
 
 variable "prod" {
-  type = string
+  type    = string
   default = "183992491863"
 }
